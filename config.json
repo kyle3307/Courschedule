@@ -1,0 +1,13 @@
+{
+    "paths": {
+        "schedule_path": "schedule.json",
+        "students_path": "students.json"
+    },
+    "fonts": {
+        "lessons_font": ["微软雅黑",30],
+        "time_font": ["Helvetica", 16, "bold"],
+        "title_font": ["Helvetica", 25],
+        "button_font": ["微软雅黑", 14]
+    },
+    "window_width": 128
+}

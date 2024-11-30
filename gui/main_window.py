@@ -8,13 +8,14 @@ from logic.configure import config
 
 
 class MainWindow:
-
+    __conf=config()
     def __init__(self, master):
+        
         self.master = master
         self.master.title("课程表")
 
-        fonts = config("fonts")
-        WINDOW_WIDTH = config("window_width")
+        fonts = self.__conf.get("fonts")
+        WINDOW_WIDTH = self.__conf.get("window_width")
 
         self.master.overrideredirect(True)
         self.master.geometry(

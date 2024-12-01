@@ -5,7 +5,7 @@ from hashlib import sha256
 from logic.configure import config
 
 
-class CertificationErrow(Exception):
+class CertificationError(ValueError):
 
     def __init__(self, message: str):
         self.message = message
@@ -21,7 +21,9 @@ def draw_random_student():
             file_content = file.read()  # 读取文件内容
             if conf.get("certification") != sha256(file_content).hexdigest():
                 # print(sha256(file_content).hexdigest())
-                raise CertificationErrow("The SHA-256 values ​​of the files do not match.")
+                messagebox.showerror("错误", f"SHA-256不匹配")
+                raise CertificationError(
+                    "The SHA-256 values ​​of the files do not match.")
     with open(str(conf.get("paths.students_path")), 'r',
               encoding='utf-8') as file:
         students = json.load(file)

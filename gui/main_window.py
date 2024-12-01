@@ -66,9 +66,9 @@ class MainWindow:
         self.master.after(1000, self.update_time)
 
     def load_schedule(self):
-        load_day_schedule("Monday", self.morning_entries,
+        load_day_schedule(time.strftime("%A"), self.morning_entries,
                           self.afternoon_entries, self.evening_entries)
 
     def save_schedule(self):
-        save_day_schedule("Monday", self.morning_entries,
+        save_day_schedule(time.strftime("%A"), self.morning_entries,
                           self.afternoon_entries, self.evening_entries)
